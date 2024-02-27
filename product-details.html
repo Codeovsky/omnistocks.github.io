@@ -1,0 +1,35 @@
+<!-- product-details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+
+<script src="products.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        // Get the product name from the hash fragment
+        const productName = decodeURIComponent(window.location.hash.substring(1));
+
+        // Find the selected product
+        const selectedProduct = products.find(product => product.name === productName);
+
+        // Update page title with the selected product name
+        document.title = selectedProduct.name;
+
+        // Display product details
+        document.body.innerHTML = `
+            <h1>${selectedProduct.name}</h1>
+            <img src="${selectedProduct.image}" alt="${selectedProduct.name} Image" style="max-width: 100%; height: 250px">
+            <h4>${selectedProduct.price}</h4>
+            <p>${selectedProduct.description}</p>
+        `;
+    });
+</script>
+
+</body>
+</html>
