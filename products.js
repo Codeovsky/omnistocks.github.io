@@ -2,16 +2,15 @@
 
 const products = [
     {
-        name: "Steel Chair",
-        description: "It is a nice chair made of steel.",
+        name: "Gold Urgent Facial",
+        description: "Gold Urgent Facial",
         price: "20$",
-        image: "images/steel-chair.jpg", // Add the image filename for Steel Chair
+        image: "images/IMG-20240228-WA0002.jpg",
     },
     {
-        name: "Wooden Table",
-        description: "It's made of wood.",
+        name: "Hamme Natural Cocunut",
+        description: "Hamme Natural Cocunut",
         price: "50$",
-        image: "images/wooden-table.jpg", // Add the image filename for Wooden Table
+        image: "images/IMG-20240228-WA0003.jpg",
     },
-    // Add more products as needed
 ];
