@@ -1,35 +1,143 @@
-<!-- product-details.html -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
+<title>Product Details - Omni Stocks Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="w3-content w3-light-grey">
 
-<script src="products.js"></script>
-<script>
-    window.addEventListener('load', () => {
-        // Get the product name from the hash fragment
-        const productName = decodeURIComponent(window.location.hash.substring(1));
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main">
+      
+      <!-- Top header -->
+      <header class="w3-container w3-large">
+        <a href="index.html"><h4 class="w3-left w3-text-teal"><b>Omni Stocks Shop</b></h4></a>
+        <p class="w3-right">
+          <a href="about.html">About Us</a>
+          &nbsp;&nbsp;
+          <a href="contact.html">Contact Us</a>
+          <!--
+          &nbsp;&nbsp;
+          <i class="fa fa-shopping-cart w3-margin-right"></i>
+          -->
+        </p>
+      </header>
 
-        // Find the selected product
-        const selectedProduct = products.find(product => product.name === productName);
+    <!-- Product Information -->
+    <div id="productInformation">
+    </div>
 
-        // Update page title with the selected product name
-        document.title = selectedProduct.name;
+  <!-- End page content -->
+  </div>
 
-        // Display product details
-        document.body.innerHTML = `
-            <h1>${selectedProduct.name}</h1>
-            <img src="${selectedProduct.image}" alt="${selectedProduct.name} Image" style="max-width: 100%; height: 250px">
-            <h4>${selectedProduct.price}</h4>
-            <p>${selectedProduct.description}</p>
-        `;
-    });
-</script>
+  <br />
 
-</body>
-</html>
+  <script src="products.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+          // Get the product name from the hash fragment
+          const productName = decodeURIComponent(window.location.hash.substring(1));
+  
+          // Find the selected product
+          const selectedProduct = products.find(product => product.name === productName);
+  
+          // Update page title with the selected product name
+          document.title = selectedProduct.name + " Omni Stocks Shop";
+  
+          // Display product details
+          const container = document.getElementById('productInformation');
+          const productDiv = document.createElement('div');
+            productDiv.innerHTML = `
+                <div class="w3-container" id="apartment">
+                <div class="w3-display-container mySlides">
+                <center><img src="${selectedProduct.image}" alt="${selectedProduct.name}"></center>
+                </div>
+                </div>
+
+                <br />
+            
+                <div class="w3-container">
+                <h4><strong>${selectedProduct.name}</strong></h4>
+                <p>${selectedProduct.description}</p>
+                <p><i class="fa fa-tag"></i> Price: Rs ${selectedProduct.price}</p>
+                <hr>
+                <p><button class="w3-button w3-black w3-four">Buy Now</button></p>
+                </div>
+            `;
+
+          container.appendChild(productDiv);
+      });
+  </script>
+
+    <script>    
+        // Product Images
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+        
+        function currentDiv(n) {
+        showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+        }
+        x[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " w3-opacity-off";
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="w3-padding-64 w3-white w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4 w3-justify">
+        <h4>About</h4>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+      </div>
+  
+      <div class="w3-col s4 w3-justify">
+        <h4>We accept</h4>
+        <p>Cash on Delivery</p>
+        <p>Easypaisa</p>
+        <p>Jazzcash</p>
+        <p>Sadapay</p>
+        <p>Bank Transfer</p>
+      </div>
+  
+      <div class="w3-col s4 w3-justify">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Nowshera, KPK, Pakistan</p>
+        <p><i class="fa fa-fw fa-phone"></i> +92 300 1234567</p>
+        <p><i class="fa fa-fw fa-envelope"></i> omnistocksshop@gmail.com</p>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">&copy; Omni Stocks Shop 2024</div>
+  
+  <!-- End page content -->
+  </div>
+  
+  </body>
+  </html>
+  

@@ -1,0 +1,42 @@
+body, h1, h2, h3, h4, h5, h6 
+{
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.w3-content {
+  max-width: 1200px;
+}
+
+.banner-img {
+  width: 100%; 
+  height: 600px;
+}
+
+#banner-text {
+  padding: 24px 48px;
+}
+
+.product-img {
+  width: 100%; 
+  border: 1px solid white!important; 
+  border-radius: 20px;
+}
+
+.contact-page-container i {
+  width: 30px;
+}
+
+.mySlides {
+  background-color: whitesmoke;
+}
+
+.mySlides img {
+  width:50%; 
+  height: 600px; 
+  border: 1px solid white!important; 
+  border-radius: 50px;
+}
