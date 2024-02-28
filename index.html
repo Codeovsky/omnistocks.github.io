@@ -18,11 +18,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif;}
   
   <!-- Top header -->
   <header class="w3-container w3-large">
-    <p class="w3-left"><b>Omni Stocks Shop</b></p>
+    <a href="index.html"><h4 class="w3-left w3-text-teal"><b>Omni Stocks Shop</b></h4></a>
     <p class="w3-right">
-      About Us
+      <a href="about.html" style="text-decoration: none;">About Us</a>
+      &nbsp;&nbsp;
+      <a href="contact.html" style="text-decoration: none;">Contact Us</a>
+      <!--
       &nbsp;&nbsp;
       <i class="fa fa-shopping-cart w3-margin-right"></i>
+      -->
     </p>
   </header>
 
@@ -36,31 +40,51 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif;}
   </div>
 
   <div class="w3-container w3-text-black" id="jeans">
-    <p>8 items</p>
+    <p>2 items</p>
   </div>
 
   <!-- Product grid -->
-  <div class="w3-row">
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="images/IMG-20240228-WA0002.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
-      </div>
-    </div>
+  <script src="products.js"></script>
+
+  <div class="w3-row" id="productList">
   </div>
-  
+
+  <script>
+    window.addEventListener('load', () => {
+        displayProducts();
+    });
+
+    function displayProducts() {
+        const container = document.getElementById('productList');
+
+        for (const product of products) {
+            const productDiv = document.createElement('div');
+            productDiv.innerHTML = `
+              <div class="w3-col l3 s6">
+                <div class="w3-container">
+                  <div class="w3-display-container">
+                    <img src="${product.image}" alt="${product.image}" style="width:100%">
+                    <div class="w3-display-middle w3-display-hover">
+                      <a href="product-details.html#${encodeURIComponent(product.name)}"><button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button></a>
+                    </div>
+                  </div>
+                  <p>${product.name}<br><b class="w3-text-teal">${product.price}</b></p>
+                </div>
+              </div>
+            `;
+
+            container.appendChild(productDiv);
+        }
+    }
+  </script>
+
   <!-- Footer -->
   <footer class="w3-padding-64 w3-white w3-small w3-center" id="footer">
     <div class="w3-row-padding">
       <div class="w3-col s4 w3-justify">
         <h4>About</h4>
-        <p><a href="#">About us</a></p>
-        <p><a href="#">Contact Us</a></p>
+        <p><a href="about.html">About Us</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
       </div>
 
       <div class="w3-col s4 w3-justify">
@@ -75,7 +99,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif;}
       <div class="w3-col s4 w3-justify">
         <h4>Store</h4>
         <p><i class="fa fa-fw fa-map-marker"></i> Nowshera, KPK, Pakistan</p>
-        <p><i class="fa fa-fw fa-phone"></i> +92 300 5984947</p>
+        <p><i class="fa fa-fw fa-phone"></i> +92 300 1234567</p>
         <p><i class="fa fa-fw fa-envelope"></i> omnistocksshop@gmail.com</p>
         <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
         <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
