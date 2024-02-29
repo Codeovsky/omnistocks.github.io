@@ -12,10 +12,10 @@ const products = [
         image: "images/Hamme Coconut Oil 200ml.jpg",
     },
     {
-        name: "Intensive Cleansing Black Facewash",
+        name: "Hamme Intensive Cleansing Black Facewash",
         description: "",
         price: "264.00",
-        image: "images/Intensive Cleansing Black Facewash.jpg",
+        image: "images/Hamme Intensive Cleansing Black Facewash.jpg",
     },
     {
         name: "Alvina Moonligh Talcum Small",
