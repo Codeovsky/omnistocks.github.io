@@ -16,6 +16,34 @@ a {
   height: 600px;
 }
 
+/* Styles for smaller screens (phones) */
+@media screen and (max-width: 767px) {
+  .banner-img {
+    height: 450px;
+  }
+}
+
+/* Styles for medium-sized screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .banner-img {
+    height: 500px; 
+  }
+}
+
+/* Styles for larger screens (laptops, desktops) */
+@media screen and (min-width: 1024px) {
+  .banner-img {
+    height: 550px; 
+  }
+}
+
+/* Additional styles for very large screens (large desktops, high-res monitors) */
+@media screen and (min-width: 1200px) {
+  .banner-img {
+    height: 600px; 
+  }
+}
+
 #banner-text {
   padding: 24px 48px;
 }
@@ -32,6 +60,186 @@ a {
   height: 40px;
 }
 
+@media screen and (max-width: 299px) {
+  .product-container {
+    height: 300px;
+  }
+  
+  .product-name {
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 349px) {
+  .product-container {
+    height: 320px;
+  }
+  
+  .product-name {
+    height: 75px;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 399px) {
+  .product-container {
+    height: 350px;
+  }
+  
+  .product-name {
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 449px) {
+  .product-container {
+    height: 375px;
+  }
+  
+  .product-name {
+    height: 55px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 499px) {
+  .product-container {
+    height: 390px;
+  }
+  
+  .product-name {
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 549px) {
+  .product-container {
+    height: 420px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 600px) {
+  .product-container {
+    height: 450px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 649px) {
+  .product-container {
+    height: 350px;
+  }
+  
+  .product-name {
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 699px) {
+  .product-container {
+    height: 370px;
+  }
+  
+  .product-name {
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 749px) {
+  .product-container {
+    height: 390px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 799px) {
+  .product-container {
+    height: 410px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 849px) {
+  .product-container {
+    height: 430px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 899px) {
+  .product-container {
+    height: 450px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 949px) {
+  .product-container {
+    height: 475px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 992px) {
+  .product-container {
+    height: 500px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1023px) {
+  .product-container {
+    height: 400px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .product-container {
+    height: 450px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product-container {
+    height: 470px;
+  }
+  
+  .product-name {
+    height: 40px;
+  }
+}
+
 .product-img {
   width: 100%; 
   border: 1px solid white!important; 
@@ -43,10 +251,45 @@ a {
 }
 
 .mySlides img {
-  width:50%; 
-  height: 600px; 
   border: 1px solid white!important; 
   border-radius: 50px;
+}
+
+.mySlides img {
+  width: 60%; 
+  height: 500px; 
+}
+
+/* Styles for smaller screens (phones) */
+@media screen and (max-width: 767px) {
+  .mySlides img {
+    width: 80%; 
+    height: 400px; 
+  }
+}
+
+/* Styles for medium-sized screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .mySlides img {
+    width: 75%; 
+    height: 450px; 
+  }
+}
+
+/* Styles for larger screens (laptops, desktops) */
+@media screen and (min-width: 1024px) {
+  .mySlides img {
+    width: 70%; 
+    height: 500px; 
+  }
+}
+
+/* Additional styles for very large screens (large desktops, high-res monitors) */
+@media screen and (min-width: 1200px) {
+  .mySlides img {
+    width: 60%; 
+    height: 600px; 
+  }
 }
 
 .contact-page-container i {
