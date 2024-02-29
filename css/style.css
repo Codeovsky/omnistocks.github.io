@@ -20,14 +20,22 @@ a {
   padding: 24px 48px;
 }
 
+#itemsCount {
+  color: teal;
+}
+
+.product-container {
+  height: 470px;
+}
+
+.product-name {
+  height: 40px;
+}
+
 .product-img {
   width: 100%; 
   border: 1px solid white!important; 
   border-radius: 20px;
-}
-
-.contact-page-container i {
-  width: 30px;
 }
 
 .mySlides {
@@ -39,4 +47,8 @@ a {
   height: 600px; 
   border: 1px solid white!important; 
   border-radius: 50px;
+}
+
+.contact-page-container i {
+  width: 30px;
 }

@@ -38,48 +38,52 @@
   </div>
 
   <div class="w3-container w3-text-black" id="products">
-    <p id="itemsCount"></p>
+    <b><p id="itemsCount"></p></b>
   </div>
-
+  
   <!-- Product grid -->
   <script src="products.js"></script>
-
+  
   <div class="w3-row" id="productList">
   </div>
-
+  
   <script>
     window.addEventListener('load', () => {
-        displayProducts();
+      displayProducts();
     });
-
+  
     function displayProducts() {
-        const container = document.getElementById('productList');
-        const itemsCountElement = document.getElementById('itemsCount');
-
-        let itemCount = 0;
-
-        for (const product of products) {
-            const productDiv = document.createElement('div');
-            productDiv.innerHTML = `
-              <div class="w3-col l4 s6">
-                <div class="w3-container">
-                  <div class="w3-display-container">
-                    <img src="${product.image}" alt="${product.image}" class="product-img">
-                    <div class="w3-display-middle w3-display-hover">
-                      <a href="product-details.html#${encodeURIComponent(product.name)}"><button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button></a>
-                    </div>
-                  </div>
-                  <p>${product.name}<br><b class="w3-text-teal">Rs ${product.price}</b></p>
+      const container = document.getElementById('productList');
+      const itemsCountElement = document.getElementById('itemsCount');
+  
+      let itemCount = 0;
+  
+      // Sort the products array by product name in ascending order
+      const sortedProducts = products.slice().sort((a, b) => a.name.localeCompare(b.name));
+  
+      for (const product of sortedProducts) {
+        const productDiv = document.createElement('div');
+        productDiv.innerHTML = `
+          <div class="w3-col l3 m4 s6">
+            <div class="w3-container product-container">
+              <div class="w3-display-container">
+                <img src="${product.image}" alt="${product.image}" class="product-img">
+                <div class="w3-display-middle w3-display-hover">
+                  <a href="product-details.html#${encodeURIComponent(product.name)}"><button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button></a>
                 </div>
               </div>
-            `;
-
-            container.appendChild(productDiv);
-            itemCount++;
-        }
-
-        // Update the items count in the <p> element
-        itemsCountElement.textContent = `${itemCount} items`;
+              <p class="product-name">${product.name}</p>
+              <b class="w3-text-teal">Rs ${product.price}</b>
+            </div>
+          </div>
+        `;
+  
+        container.appendChild(productDiv);
+        itemCount++;
+      }
+  
+      // Update the items count in the <p> element
+      itemsCountElement.textContent = `${itemCount} items`;
     }
   </script>
 
@@ -105,7 +109,7 @@
         <h4>Store</h4>
         <p><i class="fa fa-fw fa-map-marker"></i> Nowshera, KPK, Pakistan</p>
         <p><i class="fa fa-fw fa-phone"></i> +92 300 1234567</p>
-        <p><i class="fa fa-fw fa-envelope"></i> omnistocksshop@gmail.com</p>
+        <p><i class="fa fa-fw fa-envelope"></i> omnistocksshop [at] gmail.com</p>
         <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
         <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
       </div>
